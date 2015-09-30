@@ -1,0 +1,307 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,100italic,100,400italic,700,700italic&subset=latin,cyrillic-ext)
+@import "compass"
+
+
+body
+	margin: 0
+	padding: 0
+	font-family: 'Roboto'
+	&.body-block
+		overflow: hidden
+
+.clear
+	float: none
+	clear: both
+
+.b-wrap
+	width: 765px
+	margin: auto
+
+/*main table */
+.b-table
+	padding-bottom: 40px
+
+	table
+		margin-top: 20px
+		border-spacing: 0
+		border: 1px solid #e2e2e2
+
+	td	
+		height: 95px
+		width: 97px
+		padding: 5px
+		font-size: 12px
+		vertical-align: top
+		border: 1px solid #e2e2e2
+		overflow: hidden
+		color: #666666
+		word-break: break-word
+
+		&>div
+			height: 95px
+			overflow: hidden
+	
+
+		&.b-cell
+			&:hover
+				border-color: #8abfe9
+				cursor: pointer
+				background: #e5f1f9
+				
+			
+			&.b-cell_today
+			
+				background: #f4f4f4
+				font-weight: bold
+			
+			&.active
+				background: #e5f1f9 
+				border-color: #8abfe9
+			
+		
+			&_full
+				background: #c2e4fe
+		
+		.date
+			color: #999999
+			font-weight: 300
+			font-style: italic
+			font-size: 13px
+			
+
+/*main table end*/
+.b-top
+	padding: 20px 0
+	background: #f4f4f4
+	border-bottom: 1px solid #d3d3d3
+	box-shadow: 0px 3px 3px #b7b7b7
+	margin-bottom: 20px
+
+	.b-search
+		position: relative
+		float: right
+		
+	.b-search__input
+		margin: 0
+		border: 1px solid #c6c6c6
+		height: 23px
+		outline: none
+		width: 200px
+		border-radius: 3px
+		padding: 0 3px
+		box-shadow: inset 0 1px 3px #666666
+	
+	.b-search__sg
+		position: absolute
+		top: 150%
+		left: 0
+		width: 230px
+		background: #fff
+		padding: 0
+		margin: 0
+		z-index: 100
+		box-shadow: 1px -2px 2px #999999,-1px 1px 2px #999999
+		display: none
+	
+		&:before
+			position: absolute
+			left: 20px
+			bottom: 100%
+			color: #FFF
+			content: "▲"
+			font-size: 15px
+			text-shadow:  0px -2px 2px #999999
+			margin-bottom: -6px
+		
+
+
+		.b-search__sg-item
+			display: block
+			height: 23px
+			line-height: 14px
+			border-top: 1px solid #c6c6c6
+			overflow: hidden
+			padding: 8px 3px
+			margin: 3px
+			font-size: 13px	
+			color: #000
+			
+		
+			&:first-child
+				border: none
+			
+			&:hover
+				cursor: pointer
+				background: #27a1ff
+				color: white		
+				span
+					color: white		
+			p
+				margin: 0
+				padding: 0
+			
+			span
+				font-size: 11px
+				color: #666666
+				font-weight: 300	
+.b-header 
+	.b-header__nav
+		cursor: pointer
+		width: 15px
+		height: 15px
+		display: inline-block
+		border: 1px solid #a6a6a6
+		border-radius: 2px
+		position: relative
+	
+		&:after
+			content: ""
+			width: 0px
+			height: 0px
+			border: 4px solid transparent
+			position: absolute
+			top: 4px
+			
+		
+		&.b-header__nav_next:after
+			border-left-color: #a5a5a5
+			left: 6px
+		
+		&.b-header__nav_prev:after
+			border-right-color: #a5a5a5
+			left: 1px
+		
+	.b-header__month	
+		display: inline-block
+		line-height: 18px
+		vertical-align: top
+		font-size: 14px
+		width: 110px
+		text-align: center
+	
+	.b-header__today-btn
+		cursor: pointer
+		height: 15px
+		display: inline-block
+		border: 1px solid #a6a6a6
+		border-radius: 2px
+		font-size: 12px
+		padding: 0 4px
+		margin-left: 10px
+		vertical-align:  top
+		color: #555555
+		line-height: 14px
+	
+.b-popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 2
+	opacity: 0
+	visibility: hidden
+	overflow: auto
+	background: rgba(100,100,100,0.75)
+	@include transition(visibility 0s 0.4s, opacity 0.4s)
+
+	&.active
+		opacity: 1
+		visibility: visible
+		@include transition(opacity 0.4s)
+		
+
+	.popup__window
+		z-index: 2
+		margin: 50px auto
+		border-radius: 3px
+		overflow: hidden
+		background: #fff
+		position: relative
+		width: 250px
+		height: 350px
+		padding: 20px
+
+		& > div
+			margin: 10px 0
+
+	.b-popup__close
+		position: absolute
+		top: 10px
+		right: 10px
+		cursor: pointer
+		line-height: 12px
+		font-size: 13px
+
+
+	.b-popup__date
+		font-size: 15px
+		height: 20px
+		font-weight: 300
+		
+	
+	input[type="text"], textarea
+		display: block
+		border: 1px solid #d2d2d2
+		border-radius: 3px	
+		outline: none
+		line-height: 25px
+		box-shadow: inset 1px 2px 2px #a5a5a5
+	
+	input[type="text"]
+		height: 25px	
+		width: 246px	
+		padding: 0 0 0 2px
+	
+	textarea
+		height: 200px
+		resize: none
+		width: 244px
+		padding: 2px
+
+
+
+	
+
+	
+	.b-popup__btn
+		cursor: pointer
+		border: 1px solid #d2d2d2
+		padding: 11px 24px
+		font-size: 12px
+		@include border-radius(20px)
+		&:before
+			font-family: "fontello"
+			font-style: normal
+			font-weight: normal
+			@include inline-block
+			text-decoration: inherit
+			width: 1em
+			margin-right: .2em
+			text-align: center
+
+		&_save
+			float: left
+			outline: none
+			background: #b5f0b5
+			&:before
+				content: '\e800'
+
+		
+		&_delete
+			float: right
+			background: #f0b5b5
+			&:before
+				content: '\e802'
+	
+	.b-popup__warning-wrapper
+		height: 25px
+		margin: 0
+	
+	.b-popup__warning
+		color: red
+		display: none
+		font-size: 11px
+		
+		&.visible
+			display: block

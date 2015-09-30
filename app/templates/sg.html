@@ -1,0 +1,4 @@
+<% var i=0; %>
+<% for(i=0;i<foundEvents.length;i++) { %>
+	<li class="b-search__sg-item" data-date="<%= foundEvents[i].date %>"><p><%= foundEvents[i].title %></p><span><%= foundEvents[i].dateString %></span></li>
+<% } %>
