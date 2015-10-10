@@ -104,6 +104,11 @@ var FormView = Backbone.View.extend({
 			alert(this.evnt.validationError);
 		}
 
+	},
+	deleteClick:function(){
+		this.evnt.destroy();
+		this.evnts.trigger('change');
+		this.router.goToMainPage();
 	}
 });
 
