@@ -166,7 +166,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="popup__window"> <span class="b-popup__close">x</span> <div class="b-popup__date"></div> <div class="b-popup__title"> <input type="text" placeholder="Заголовок" name="title"> </div> <div class="b-popup__description"> <textarea name="description" placeholder="Описание"></textarea> </div> <p class="b-popup__warning-wrapper"> <span class="b-popup__warning">Для сохранения заполните все поля</span> </p> <input type="submit" value="Сохранить" class="b-popup__btn b-popup__btn_save"> <span class="b-popup__btn b-popup__btn_delete">Удалить</span> </div>';
+__p+='<div class="popup__window"> <span class="b-popup__close">x</span> <div class="b-popup__date"></div> <div class="b-popup__title"> <input type="text" placeholder="Заголовок" name="title"> </div> <div class="b-popup__description"> <textarea name="description" placeholder="Описание"></textarea> </div> <p class="b-popup__warning-wrapper"> <span class="b-popup__warning">Для сохранения заполните все поля</span> </p> <span class="b-popup__btn b-popup__btn_save">Сохранить</span> <span class="b-popup__btn b-popup__btn_delete">Удалить</span> </div>';
 }
 return __p;
 };
@@ -440,7 +440,8 @@ var FormView = Backbone.View.extend({
 		var isValid = this.evnt.set({
 			title: this.$('[name="title"]').val(),
 			description: this.$('[name="description"]').val(),
-			date: this.$('.b-popup__date').data('date')
+			date: this.$('.b-popup__date').data('date'),
+			id: this.$('.b-popup__date').data('date')
 		}, { validate: true });
 		if (isValid) {
 			this.evnts.add(this.evnt, { merge: true });

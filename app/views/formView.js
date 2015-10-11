@@ -93,7 +93,8 @@ var FormView = Backbone.View.extend({
 		var isValid = this.evnt.set({
 			title: this.$('[name="title"]').val(),
 			description: this.$('[name="description"]').val(),
-			date: this.$('.b-popup__date').data('date')
+			date: this.$('.b-popup__date').data('date'),
+			id: this.$('.b-popup__date').data('date')
 		}, {validate:true});
 		if(isValid){
 			this.evnts.add(this.evnt,{merge:true});
